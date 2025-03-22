@@ -1,3 +1,13 @@
 <div class="w-full">
-  <h1 class="font-bold text-center text-4xl">Has Basil had her pill today?</h1>
+  <h1 class="font-bold text-center text-2xl">Has Basil had her pill today?</h1>
+  <div class='w-full font-bold text-4xl text-center mt-24'>
+    <% if @dosed %>
+      <p class="text-emerald-700">Yes</p>
+    <% else %>
+      <div class="flex-col space-y-4">
+        <p class="text-red-600">No</p>
+        <%= button_to "Dose Basil", dosings_path, class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2"  %>
+      </div>
+    <% end %>
+  </div>
 </div>

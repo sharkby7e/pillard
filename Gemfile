@@ -62,3 +62,5 @@ group :development do
 end
 
 gem "factory_bot_rails"
+
+gem "capybara", "~> 3.40"

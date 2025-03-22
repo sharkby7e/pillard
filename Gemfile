@@ -64,3 +64,5 @@ end
 gem "factory_bot_rails"
 
 gem "capybara", "~> 3.40"
+
+gem "dockerfile-rails", ">= 1.7", :group => :development

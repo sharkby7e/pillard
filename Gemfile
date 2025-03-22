@@ -59,12 +59,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+gem "dockerfile-rails", ">= 1.7"
 end
 
 gem "factory_bot_rails"
 
 gem "capybara", "~> 3.40"
-
-gem "dockerfile-rails", ">= 1.7", :group => :development
 
 gem "rails_icons", "~> 1.2"

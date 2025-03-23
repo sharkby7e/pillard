@@ -1,9 +1,8 @@
-<div class="w-full">
-  <h1 class="font-bold text-center text-2xl">Has Basil had her pill today?</h1>
+<div class="h-full flex flex-col justify-between" >
 
-  <div class='flex-col w-full font-bold text-4xl text-center space-y-8 mt-16'>
-
-    <div>
+  <div class="flex flex-col justify-around h-1/2">
+    <h1 class="font-bold text-center text-2xl">Has Basil had her pill today?</h1>
+    <div class='flex-col w-full font-bold text-4xl text-center space-y-8 -my-16'>
       <% if @dosed %>
         <p class="text-emerald-700">Yes</p>
       <% else %>
@@ -13,12 +12,11 @@
         </div>
       <% end %>
     </div>
+  </div>
 
-    <div class="flex w-full justify-center mt-24">
-      <%= link_to root_path do %>
-        <%= icon "arrow-path", class: ["size-16", "hover:animate-ping"] %>
-      <% end %>
-    </div>
-
+  <div class="flex self-end">
+    <%= link_to root_path do %>
+      <%= icon "arrow-path", class: ["size-8", "active:animate-ping hover:animate-ping"] %>
+    <% end %>
   </div>
 </div>

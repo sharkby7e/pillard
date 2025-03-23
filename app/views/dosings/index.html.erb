@@ -5,6 +5,7 @@
     <div class='flex-col w-full font-bold text-4xl text-center space-y-8 -my-16'>
       <% if @dosed %>
         <p class="text-emerald-700">Yes</p>
+        <p class="text-emerald-950 font-normal text-base">You dosed basil at <%= @today_dosing.created_at.strftime("%I:%M %P") %></p>
       <% else %>
         <div class="flex-col space-y-4">
           <p class="text-red-600">No</p>
@@ -14,9 +15,9 @@
     </div>
   </div>
 
-  <div class="flex self-end">
+  <div class="flex self-end pb-4">
     <%= link_to root_path do %>
-      <%= icon "arrow-path", class: ["size-8", "active:animate-ping hover:animate-ping"] %>
+      <%= icon "arrow-path", class: ["size-8"] %>
     <% end %>
   </div>
 </div>

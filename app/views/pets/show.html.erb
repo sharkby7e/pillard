@@ -1,2 +1,4 @@
+<div class="h-full flex">
 
-<%= @pet.name %>
+  <%= turbo_frame_tag dom_id(@pet), src: pet_dosings_path(@pet) %>
+</div>

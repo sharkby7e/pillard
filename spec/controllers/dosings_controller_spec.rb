@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe DosingsController, type: :controller do
-  describe "#index" do
+  describe "#show" do
     it "works" do
-      get :index
+      get :show
 
       expect(response).to be_successful
       expect(response.body).to have_content "Has Basil had her pill today?"

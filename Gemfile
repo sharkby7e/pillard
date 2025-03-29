@@ -66,3 +66,4 @@ group :development do
 end
 
 gem "rails_icons", "~> 1.2"
+gem "friendly_id", "~> 5.5.0"

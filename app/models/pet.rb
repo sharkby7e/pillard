@@ -1,14 +1,13 @@
-FactoryBot.define do
-  factory :dosing do
-  end
+class Pet < ApplicationRecord
+  has_many :dosings
 end
 
 # == Schema Information
 #
-# Table name: dosings
+# Table name: pets
 #
 #  id         :bigint           not null, primary key
+#  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  pet_id     :integer          not null
 #

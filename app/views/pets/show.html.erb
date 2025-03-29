@@ -1,8 +1,7 @@
 <div class="h-full flex flex-col justify-between" >
-
   <div class="flex flex-col justify-around items-center h-1/2">
     <h1 class="font-bold text-center text-2xl">Has Basil had her pill today?</h1>
-    <%= turbo_frame_tag dom_id(@pet, :dosing), src: pet_dosings_path(@pet), loading: :lazy do %>
+    <%= turbo_frame_tag dom_id(@pet, :dosing), src: pet_dosings_path(@pet), loading: :lazy, class: "min-h-[200px] mt-24" do %>
       <%= icon "trailing-spinner", library: "animated", class: ["size-8"] %>
     <% end %>
   </div>

@@ -1,5 +1,5 @@
 <%= turbo_frame_tag dom_id(@pet, :dosing) do %>
-  <div class='flex-col w-full font-bold text-4xl text-center space-y-8 -my-16'>
+  <div class='flex-col w-full font-bold text-4xl text-center space-y-8'>
     <% if @dosed %>
       <p class="text-emerald-700">Yes</p>
       <p class="text-emerald-950 font-normal text-base">You dosed basil at <%= @today_dosing.created_at.strftime("%I:%M %P") %></p>

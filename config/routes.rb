@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "pets#index"
-  resources :pets, only: [ :index ], param: :id do
+
+  resources :pets, only: [ :index ] do
     resources :dosings, only: [ :index, :create ]
   end
 

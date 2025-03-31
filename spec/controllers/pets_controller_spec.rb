@@ -8,7 +8,7 @@ RSpec.describe PetsController, type: :controller do
       get :index
 
       expect(response).to be_successful
-      expect(response.body).to have_link "Basil", href: pet_path(basil)
+      expect(response.body).to have_link basil.name, href: pet_path(basil)
     end
   end
 end

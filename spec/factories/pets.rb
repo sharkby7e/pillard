@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :pet do
+    name { "Basil" }
   end
 end
 

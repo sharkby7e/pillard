@@ -12,8 +12,8 @@ RSpec.describe Dosing, type: :model do
       old_dosing = create(:dosing, created_at: 1.day.ago)
       today_dosing = create(:dosing, created_at: Time.current)
 
-      expect(old_dosing.created_today?).to be_falsey
-      expect(today_dosing.created_today?).to be_truthy
+      expect(old_dosing.created_today?).to be false
+      expect(today_dosing.created_today?).to be true
     end
   end
 end

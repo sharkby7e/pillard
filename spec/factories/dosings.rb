@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :dosing do
+    association :pet
   end
 end
 

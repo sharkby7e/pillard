@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Pet, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory" do
+    expect(create(:pet)).to be_valid
+  end
 end
 
 # == Schema Information

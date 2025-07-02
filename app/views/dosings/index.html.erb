@@ -2,11 +2,14 @@
   <div class='flex-col w-full font-bold text-4xl text-center space-y-8'>
     <% if @dosed %>
       <p class="text-emerald-700">Yes</p>
-      <p class="text-emerald-950 font-normal text-base">You dosed basil at <%= @today_dosing.created_at.strftime("%I:%M %P") %></p>
+      <p class="text-emerald-950 font-normal text-base">You dosed
+        <%= @pet.name %>
+        at
+        <%= @today_dosing.created_at.strftime("%I:%M %P") %></p>
     <% else %>
       <div class="flex-col space-y-4">
         <p class="text-red-600">No</p>
-        <%= button_to "Dose Basil", pet_dosings_path, class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
+        <%= button_to "Dose #{@pet.name.titleize}", pet_dosings_path, class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
       </div>
     <% end %>
   </div>

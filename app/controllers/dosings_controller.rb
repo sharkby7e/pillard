@@ -4,7 +4,7 @@ include ActionView::RecordIdentifier
   def index
     @pet = Pet.find_by!(slug: params[:pet_id])
     @dosed = Dosing.any?(&:created_today?)
-    @today_dosing = Dosing.created_today.first
+    @today_dosing = Dosing.created_today.first if @dosed
   end
 
   def create

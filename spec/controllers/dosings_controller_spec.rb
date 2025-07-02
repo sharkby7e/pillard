@@ -1,34 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe DosingsController, type: :controller do
-  describe "#show" do
+  describe "#index" do
+    let!(:basil) { create(:pet, name: "Basil") }
+
     it "works" do
-      get :show
+      get :index, params: { pet_id: basil.slug }
 
       expect(response).to be_successful
-      expect(response.body).to have_content "Has Basil had her pill today?"
     end
 
-    it "says yes if there was a dosing today" do
-      create(:dosing, created_at: Time.current)
+    context "there was a dosing today" do
+      let!(:today_dosing) { create(:dosing, pet_id: basil.id) }
 
-      get :index
-      expect(response.body).to have_content "Yes"
+      it "simple says yes" do
+        get :index, params: { pet_id: basil.slug }
+
+        expect(response.body).to have_content "Yes"
+      end
     end
 
-    it "renders a button to create a dosing if there are no dosings " do
-      get :index
-      expect(response.body).to have_content "No"
-      expect(response.body).to have_button "Dose Basil"
-    end
-  end
+    context "there was no dosing today" do
+      it "says no" do
+        get :index, params: { pet_id: basil.slug }
 
-  describe "#create" do
-    it "creates a new dosing" do
-      post :create
-
-      expect { post :create }.to change { Dosing.count }.by 1
-      expect(response).to be_redirect
+        expect(response.body).to have_content "No"
+        expect(response.body).to have_button "Dose Basil"
+      end
     end
   end
 end

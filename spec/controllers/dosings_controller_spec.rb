@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe DosingsController, type: :controller do
   describe "#index" do
     let!(:basil) { create(:pet, name: "Basil") }
-    let!(:finch) { create(:pet, name: "Finch") }
+    let(:finch) { create(:pet, name: "Finch") }
 
     it "works" do
       get :index, params: { pet_id: basil.slug }
@@ -28,7 +28,7 @@ RSpec.describe DosingsController, type: :controller do
     end
 
     context "there was no dosing today" do
-      it "says no" do
+      it "says no and has a button to dose" do
         get :index, params: { pet_id: basil.slug }
 
         expect(response.body).to have_content "No"

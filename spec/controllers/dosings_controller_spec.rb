@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe DosingsController, type: :controller do
   describe "#index" do
     let!(:basil) { create(:pet, name: "Basil") }
+    let!(:finch) { create(:pet, name: "Finch") }
 
     it "works" do
       get :index, params: { pet_id: basil.slug }
@@ -17,6 +18,12 @@ RSpec.describe DosingsController, type: :controller do
         get :index, params: { pet_id: basil.slug }
 
         expect(response.body).to have_content "Yes"
+      end
+
+      it "only does dosings for the pet that you're on" do
+        get :index, params: { pet_id: finch.slug }
+
+        expect(response.body).to have_content "No"
       end
     end
 

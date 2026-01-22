@@ -6,11 +6,12 @@ include ActionView::RecordIdentifier
     @dosed = @pet.dosings.any?(&:created_today?)
     @today_dosing = @pet.dosings.created_today.first if @dosed
 
-    @last_dosing_side= if @today_dosing.present?
+    @last_dosing_side=
+      if @today_dosing.present?
                           @today_dosing.side
-                       else @pet.dosings.any?
+      else @pet.dosings.any?
                           @pet.dosings.last&.side
-                       end
+      end
 
     @dosing_side = @last_dosing_side == "left" ? :right : :left
   end

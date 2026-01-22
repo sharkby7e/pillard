@@ -35,5 +35,8 @@ RSpec.describe DosingsController, type: :controller do
         expect(response.body).to have_button "Dose Basil"
       end
     end
+
+    context 'yesterday dosing had a side' do
+    end
   end
 end

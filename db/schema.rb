@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_29_191951) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_20_010622) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -18,6 +18,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_29_191951) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "pet_id", null: false
+    t.integer "side"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

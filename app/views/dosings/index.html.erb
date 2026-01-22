@@ -5,11 +5,21 @@
       <p class="text-emerald-950 font-normal text-base">You dosed
         <%= @pet.name %>
         at
-        <%= @today_dosing.created_at.strftime("%I:%M %P") %></p>
+        <%= @today_dosing.created_at.strftime("%I:%M %P") %>
+        <% if @last_dosing_side.present? %>
+          on the <%= @last_dosing_side.to_s.titleize %> side
+        <% end %>
+      </p>
     <% else %>
       <div class="flex-col space-y-4">
         <p class="text-red-600">No</p>
-        <%= button_to "Dose #{@pet.name.titleize}", pet_dosings_path, class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
+
+        <% if @last_dosing_side.present? %>
+          <p class="text-red-950 text-base">Yesterday you dosed basil on the <%= @last_dosing_side %> side. </p>
+          <%= button_to "Dose #{@pet.name.titleize} on the #{@dosing_side.to_s.titleize} side", pet_dosings_path(dosing: {side: @dosing_side}), class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
+        <% else %>
+          <%= button_to "Dose #{@pet.name.titleize}", pet_dosings_path(dosing:{}), class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
+        <% end %>
       </div>
     <% end %>
   </div>

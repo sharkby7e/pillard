@@ -29,6 +29,6 @@ include ActionView::RecordIdentifier
 
 
   def dosing_attributes
-    params.permit(:dosing).permit(:side)
+    params.require(:dosing).permit(:side)
   end
 end

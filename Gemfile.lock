@@ -160,7 +160,8 @@ GEM
     loofah (2.25.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    mail (2.8.1)
+    mail (2.9.0)
+      logger
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -171,7 +172,7 @@ GEM
     minitest (6.0.1)
       prism (~> 1.5)
     msgpack (1.8.0)
-    net-imap (0.5.10)
+    net-imap (0.6.2)
       date
       net-protocol
     net-pop (0.1.2)
@@ -185,7 +186,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     net-ssh (7.3.0)
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.19.0-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.0-aarch64-linux-musl)
@@ -259,9 +260,9 @@ GEM
     rails-html-sanitizer (1.6.2)
       loofah (~> 2.21)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
-    rails_icons (1.4.0)
+    rails_icons (1.5.1)
       nokogiri (~> 1.16, >= 1.16.4)
-      rails (> 6.1)
+      rails (>= 7.0)
     railties (8.0.3)
       actionpack (= 8.0.3)
       activesupport (= 8.0.3)
@@ -423,7 +424,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.3)
-  rails_icons (~> 1.4)
+  rails_icons (~> 1.5)
   rspec-rails
   rubocop-rails-omakase
   shoulda-matchers

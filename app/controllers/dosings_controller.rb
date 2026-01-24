@@ -1,16 +1,17 @@
 class DosingsController < ApplicationController
-include ActionView::RecordIdentifier
+  include ActionView::RecordIdentifier
 
   def index
     @pet = Pet.find_by!(slug: params[:pet_id])
     @dosed = @pet.dosings.any?(&:created_today?)
     @today_dosing = @pet.dosings.created_today.first if @dosed
 
-    @last_dosing_side=
+    @last_dosing_side =
       if @today_dosing.present?
-                          @today_dosing.side
-      else @pet.dosings.any?
-                          @pet.dosings.last&.side
+        @today_dosing.side
+      else
+        @pet.dosings.any?
+        @pet.dosings.last&.side
       end
 
     @dosing_side = @last_dosing_side == "left" ? :right : :left
@@ -26,8 +27,7 @@ include ActionView::RecordIdentifier
     end
   end
 
-private
-
+  private
 
   def dosing_attributes
     params.require(:dosing).permit(:side)

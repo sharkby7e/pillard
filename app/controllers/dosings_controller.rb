@@ -26,7 +26,7 @@ include ActionView::RecordIdentifier
     end
   end
 
-  private
+private
 
 
   def dosing_attributes

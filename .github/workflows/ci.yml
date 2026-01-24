@@ -22,7 +22,7 @@ jobs:
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
-  run-rspec-tests:
+  rspec:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

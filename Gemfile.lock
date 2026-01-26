@@ -123,7 +123,7 @@ GEM
     factory_bot_rails (6.5.1)
       factory_bot (~> 6.5)
       railties (>= 6.1.0)
-    friendly_id (5.5.1)
+    friendly_id (5.6.0)
       activerecord (>= 4.0.0)
     fugit (1.12.1)
       et-orbi (~> 1.4)
@@ -144,7 +144,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.10.2)
+    json (2.18.0)
     kamal (2.10.1)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -418,7 +418,7 @@ DEPENDENCIES
   debug
   dockerfile-rails (>= 1.7)
   factory_bot_rails
-  friendly_id (~> 5.5.0)
+  friendly_id (~> 5.6.0)
   importmap-rails
   jbuilder
   kamal

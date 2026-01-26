@@ -66,4 +66,4 @@ end
 
 gem "factory_bot_rails"
 gem "rails_icons", "~> 1.5"
-gem "friendly_id", "~> 5.5.0"
+gem "friendly_id", "~> 5.6.0"

@@ -65,5 +65,5 @@ group :development do
 end
 
 gem "factory_bot_rails"
-gem "rails_icons", "~> 1.6"
+gem "rails_icons", "~> 1.7"
 gem "friendly_id", "~> 5.6.0"

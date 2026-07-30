@@ -1,8 +1,8 @@
 <%= turbo_frame_tag dom_id(@pet, :dosing) do %>
   <div class='flex-col w-full font-bold text-4xl text-center space-y-8'>
     <% if @dosed %>
-      <p class="text-emerald-700">Yes</p>
-      <p class="text-emerald-950 font-normal text-base">You dosed
+      <p class="text-emerald-700 dark:text-emerald-400">Yes</p>
+      <p class="text-emerald-950 dark:text-emerald-200 font-normal text-base">You dosed
         <%= @pet.name %>
         at
         <%= @today_dosing.created_at.strftime("%I:%M %P") %>
@@ -12,12 +12,12 @@
       </p>
     <% else %>
       <div class="flex-col space-y-4">
-        <p class="text-red-600">No</p>
+        <p class="text-red-600 dark:text-red-400">No</p>
         <% if @last_dosing_side.present? %>
-          <p class="text-red-950 text-base">Yesterday <%= @pet.name %> was a <%= @last_dosing_side %>-ear girl</p>
-          <%= button_to "Dose #{@pet.name.titleize} on the #{@dosing_side} side", pet_dosings_path(dosing: {side: @dosing_side}), class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
+          <p class="text-red-950 dark:text-red-200 text-base">Yesterday <%= @pet.name %> was a <%= @last_dosing_side %>-ear girl</p>
+          <%= button_to "Dose #{@pet.name.titleize} on the #{@dosing_side} side", pet_dosings_path(dosing: {side: @dosing_side}), class: "border-1 border-black dark:border-gray-600 bg-gray-500 dark:bg-gray-700 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
         <% else %>
-          <%= button_to "Dose #{@pet.name.titleize}", pet_dosings_path(dosing:{side: nil}), class: "border-1 border-black bg-gray-500 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
+          <%= button_to "Dose #{@pet.name.titleize}", pet_dosings_path(dosing:{side: nil}), class: "border-1 border-black dark:border-gray-600 bg-gray-500 dark:bg-gray-700 rounded-md border text-lg font-normal text-white p-2 cursor-pointer" %>
         <% end %>
       </div>
     <% end %>

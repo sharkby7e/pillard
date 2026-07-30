@@ -37,6 +37,14 @@ RSpec.describe DosingsController, type: :controller do
     end
 
     context 'yesterday dosing had a side' do
+      let!(:yesterday_dosing) { create(:dosing, pet_id: basil.id, side: :left, created_at: 1.day.ago) }
+
+      it "says which side was dosed and offers the opposite side" do
+        get :index, params: { pet_id: basil.slug }
+
+        expect(response.body).to have_content "Yesterday Basil was a left-ear girl"
+        expect(response.body).to have_button "Dose Basil on the right side"
+      end
     end
   end
 end

@@ -1,6 +1,8 @@
 # Pillard
 An app to keep track of our pets' needs
 
+<img width="1330" height="1554" alt="CleanShot 2026-08-03 at 17 03 59@2x" src="https://github.com/user-attachments/assets/c66ccfea-b900-4f83-b20a-abc2ffd0f922" />
+
 ## Getting started
 
 Requires Ruby (see `Gemfile` for the version) and PostgreSQL.

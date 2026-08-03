@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+basil = Pet.find_or_create_by!(name: "Basil")
+finch = Pet.find_or_create_by!(name: "Finch")
+
+finch.dosings.create!
+
+basil.dosings.create!(side: :left, created_at: 1.day.ago)
